@@ -1,5 +1,4 @@
 public class Pessoa{
-
     private String nome;
     private int idade;
     private long cpf;
@@ -18,35 +17,33 @@ public class Pessoa{
         setCpf(cpf);
     }
 
-    //Getters
     public String getNome(){
         return this.nome;
     }
 
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    
     public int getIdade(){
         return this.idade;
+    }
+
+    public void setIdade(int idade){
+        this.idade = idade;
     }
 
     public long getCpf(){
         return this.cpf;
     }
 
-    //Setters
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-
-    public void setIdade(int idade){
-        this.idade = idade;
-    }
-    
     public void setCpf(long cpf){
         this.cpf = cpf;
     }
 
-    @Override
     public String toString(){
-        return "Nome:" + getNome() + ", Idade:" + getIdade() + ",CPF:" + getCpf();
-        //return String.format("Nome: %s Idade: %d CPF:%d", getNome(), getIdade(), getCpf());
+        return "Nome: " + getNome() + " Idade:" + getIdade() + " CPF:" + getCpf();
+        //return String.format("Nome: %s Idade: %d CPF: %d",getNome(), getIdade(), getCpf());
     }
+
 }
