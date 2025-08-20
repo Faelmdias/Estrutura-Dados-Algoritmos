@@ -17,7 +17,7 @@ public class Professor extends Pessoa{
     public void setIdProfessor(int idProfessor){
         this.idProfessor = idProfessor;
     }
-
+    @Override
     public String toString(){
         return super.toString() + " Id Professor: " + getIdProfessor();
     }
