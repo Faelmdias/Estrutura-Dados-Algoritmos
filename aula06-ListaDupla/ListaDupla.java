@@ -93,6 +93,56 @@ public class ListaDupla<T>{
         tamanho--;
     }
 
+    public void addPosicao(int indice, T dado) {
+        if (indice < 0 || indice > tamanho) {
+            System.out.println("Índice inválido!");
+        }else 
+            if (indice == 0) {
+                addInicio(dado);
+            }else 
+                if (indice == tamanho) {
+                    addFinal(dado);
+                }else{
+                    NoDuplo<T> novoNo = new NoDuplo<>(dado);
+                    NoDuplo<T> atual = primeiroNo;
+
+                    for (int i = 0; i < indice; i++) {
+                        atual = atual.getProximoNo();
+                    }
+
+                    novoNo.setProximoNo(atual);
+                    novoNo.setAnteriorNo(atual.getAnteriorNo());
+                    atual.getAnteriorNo().setProximoNo(novoNo);
+                    atual.setAnteriorNo(novoNo);
+                }
+        tamanho++;
+        atualizaIndice();
+    }
+
+    public void removePosicao(int indice) {
+        if (indice < 0 || indice >= tamanho) {
+            System.out.println("Índice inválido!");
+        }else
+            if (indice == 0) {
+                removeInicio();
+            }else
+                if (indice == tamanho - 1) {
+                    removeFinal();
+                }else{
+                    NoDuplo<T> atual = primeiroNo;
+                    for (int i = 0; i < indice; i++) {
+                        atual = atual.getProximoNo();
+                    }
+
+                    System.out.println("Dado: " + atual.getDado() + " removido");
+
+                    atual.getAnteriorNo().setProximoNo(atual.getProximoNo());
+                    atual.getProximoNo().setAnteriorNo(atual.getAnteriorNo());
+                    }    
+        tamanho--;
+        atualizaIndice();
+    }
+
     public void imprimeLista() {
         if (primeiroNo == null) {
             System.out.println("Lista Vazia!");
