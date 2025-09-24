@@ -1,21 +1,12 @@
 public class Principal {
     public static void main(String[] args) {
-        ListaDupla<String> lista = new ListaDupla<String>("Alunos");
-
-        lista.addInicio("Rafael");
-        lista.addInicio("Emanuel");
-        lista.addFinal("Felipe");
-        lista.addFinal("Gabriel");
-        lista.addFinal("Jhuly");
-        lista.atualizaIndice();
-
-        lista.imprimeLista();
-
-        lista.removeInicio();
-
-        lista.imprimeLista();
+        ListaDupla<String> lista = new ListaDupla<String>("Alunos"); 
         
-        lista.removeFinal();
+        lista.addMeio(0, "Jhuly");
+        lista.addMeio(1, "Gabriel");
+        lista.addMeio(2, "Felipe");
+        lista.addMeio(4, "Rafael");
+        lista.addMeio(5, "Emanuel");
 
         lista.imprimeLista();
     }

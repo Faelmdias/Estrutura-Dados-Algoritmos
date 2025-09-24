@@ -93,21 +93,25 @@ public class ListaDupla<T>{
         tamanho--;
     }
 
-    public void addPosicao(int indice, T dado) {
-        if (indice < 0 || indice > tamanho) {
-            System.out.println("Índice inválido!");
-        }else 
-            if (indice == 0) {
+    public void addMeio(int posicao, T dado) {
+        //if (posicao < 0 || posicao > tamanho) {
+        //    System.out.println("Índice inválido!");
+        //}else 
+            if (posicao == 0) {
                 addInicio(dado);
+                return;
             }else 
-                if (indice == tamanho) {
+                if (posicao >= tamanho) {
                     addFinal(dado);
+                    return;
                 }else{
                     NoDuplo<T> novoNo = new NoDuplo<>(dado);
                     NoDuplo<T> atual = primeiroNo;
 
-                    for (int i = 0; i < indice; i++) {
+                    int indice = 0;
+                    while (atual != null && indice < posicao) {
                         atual = atual.getProximoNo();
+                        indice++;
                     }
 
                     novoNo.setProximoNo(atual);
@@ -119,19 +123,23 @@ public class ListaDupla<T>{
         atualizaIndice();
     }
 
-    public void removePosicao(int indice) {
-        if (indice < 0 || indice >= tamanho) {
-            System.out.println("Índice inválido!");
-        }else
-            if (indice == 0) {
+    public void removeMeio(int posicao) {
+        //if (posicao < 0 || posicao >= tamanho) {
+        //    System.out.println("Índice inválido!");
+        //}else
+            if (posicao == 0) {
                 removeInicio();
+                return;
             }else
-                if (indice == tamanho - 1) {
+                if (posicao == tamanho - 1) {
                     removeFinal();
+                    return;
                 }else{
                     NoDuplo<T> atual = primeiroNo;
-                    for (int i = 0; i < indice; i++) {
+                    int indice = 0;
+                    while ( indice < posicao) {
                         atual = atual.getProximoNo();
+                        indice++;
                     }
 
                     System.out.println("Dado: " + atual.getDado() + " removido");
