@@ -18,7 +18,7 @@ public class Deque<T>{
 
     public void atualizaIndice(){
         if (primeiroNo == null) {
-            System.out.println("Deque Vazia!");
+            System.out.println("Deque Vazio!");
         } else {
             NoDuplo<T> atual = primeiroNo;
             int indice = 0;
@@ -66,7 +66,7 @@ public class Deque<T>{
 
     public void removeInicio() {
         if (primeiroNo == null) {
-            System.out.println("Deque Vazia!");
+            System.out.println("Deque Vazio!");
         } else {
             System.out.println("Dado: " + primeiroNo.getDado() + " removido");
 
@@ -84,7 +84,7 @@ public class Deque<T>{
 
     public void removeFinal() {
         if (ultimoNo == null) {
-            System.out.println("Deque Vazia!");
+            System.out.println("Deque Vazio!");
         } else {
             System.out.println("Dado: " + ultimoNo.getDado() + " removido");
 
@@ -99,6 +99,34 @@ public class Deque<T>{
         }
         atualizaIndice();
         tamanho--;
+    }
+
+    public void peekInicio(){
+        if(primeiroNo == null){
+            System.out.println("Deque Vazio!");
+        }else{
+            System.out.println(primeiroNo.getDado());
+        }
+    }
+
+    public void peekFinal(){
+        if(ultimoNo == null){
+            System.out.println("Deque Vazio!");
+        }else{
+            System.out.println(ultimoNo.getDado());
+        }
+    }
+
+    public void destroiDeque(){
+        ultimoNo = primeiroNo = null;
+    }
+
+    public int tamanhoDeque(){
+        if(ultimoNo == null){
+            return 0;
+        }else {
+            return ultimoNo.getIndice() +1;
+        }
     }
 
     public void imprimeDeque() {
