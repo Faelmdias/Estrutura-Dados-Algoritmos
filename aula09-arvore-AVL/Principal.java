@@ -1,5 +1,6 @@
 public class Principal {
     public static void main(String[] args) {
+    /*
         ArvoreAVL arvore = new ArvoreAVL();
 
         System.out.println("Inserindo valores 10, 20, 30...");
@@ -28,5 +29,26 @@ public class Principal {
 
         System.out.print("Árvore final em pré-ordem: ");
         arvore.imprimirPreOrdem(); // A estrutura final dependerá das rotações
+    }
+    */
+        ArvoreAVL arvore = new ArvoreAVL();
+
+
+        arvore.inserir(20);
+        arvore.inserir(15);
+        arvore.inserir(12); // Causa desbalanceamento e uma rotação à esquerda no nó 10
+        arvore.inserir(10);
+        arvore.inserir(8);
+        arvore.inserir(25);
+        arvore.inserir(35);
+        arvore.inserir(45);
+        arvore.inserir(50);
+        
+        System.out.print("Árvore final em pré-ordem: ");
+        arvore.imprimirPreOrdem(); // A estrutura final dependerá das rotações
+        System.out.print("Árvore final em ordem: ");
+        arvore.imprimirEMOrdem();
+        System.out.print("Árvore final em pós-ordem: ");
+        arvore.imprimirPosOrdem();
     }
 }

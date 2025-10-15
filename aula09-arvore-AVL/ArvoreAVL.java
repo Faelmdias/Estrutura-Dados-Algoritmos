@@ -139,4 +139,32 @@ public class ArvoreAVL {
             imprimirPreOrdem(no.getDireita());
         }
     }
+
+    //Método público para imprimir a árvore em ordem, começando da raiz.
+    public void imprimirEMOrdem() {
+        imprimirEMOrdem(this.raiz);
+        System.out.println(); // Pula uma linha no final
+    }
+
+    private void imprimirEMOrdem(No no) {
+        if (no != null) {
+            imprimirEMOrdem(no.getEsquerda());
+            System.out.print(no.getDado() + " ");
+            imprimirEMOrdem(no.getDireita());
+        }
+    }
+
+    //Método público para imprimir a árvore em pós-ordem, começando da raiz.
+    public void imprimirPosOrdem() {
+        imprimirPosOrdem(this.raiz);
+        System.out.println(); // Pula uma linha no final
+    }
+
+    private void imprimirPosOrdem(No no) {
+        if (no != null) {
+            imprimirPosOrdem(no.getEsquerda());
+            imprimirPosOrdem(no.getDireita());
+            System.out.print(no.getDado() + " ");
+        }
+    }
 }
