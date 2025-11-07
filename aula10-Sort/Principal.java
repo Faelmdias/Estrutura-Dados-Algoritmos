@@ -31,6 +31,14 @@ public class Principal {
         endTime = System.nanoTime();
         System.out.println("InsertionSort time: " + (endTime - startTime) + " nanoseconds");
         writeNumbersToFile(arrayToList(bubbleArray), inputFileName, "insertion");
+
+        int[] MergeArray = listToArray(numbers);
+        startTime = System.nanoTime();
+        MergeSort MergeSort = new MergeSort();
+        MergeSort.sort(MergeArray);
+        endTime = System.nanoTime();
+        System.out.println("MergeSort time: " + (endTime - startTime) + " nanoseconds");
+        writeNumbersToFile(arrayToList(bubbleArray), inputFileName, "Merge");
     }
 
     // Lê os números de um arquivo de texto
