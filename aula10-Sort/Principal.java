@@ -4,7 +4,7 @@ import java.util.*;
 public class Principal {
     public static void main(String[] args) {
         // Nome do arquivo com números aleatórios (exemplo: numeros_tamanho100.txt)
-        String inputFileName = "numeros_tamanho100000.txt"; // Altere conforme necessário
+        String inputFileName = "numeros_tamanho1000000.txt"; // Altere conforme necessário
         List<Integer> numbers = readNumbersFromFile(inputFileName);
 
         if (numbers == null) {
@@ -30,15 +30,34 @@ public class Principal {
         insertionSort.sort(insertionArray);
         endTime = System.nanoTime();
         System.out.println("InsertionSort time: " + (endTime - startTime) + " nanoseconds");
-        writeNumbersToFile(arrayToList(bubbleArray), inputFileName, "insertion");
+        writeNumbersToFile(arrayToList(insertionArray), inputFileName, "insertion");
 
-        int[] MergeArray = listToArray(numbers);
+        // Testando MergeSort
+        int[] mergeArray = listToArray(numbers);
         startTime = System.nanoTime();
-        MergeSort MergeSort = new MergeSort();
-        MergeSort.sort(MergeArray);
+        MergeSort mergeSort = new MergeSort();
+        mergeSort.sort(mergeArray);
         endTime = System.nanoTime();
         System.out.println("MergeSort time: " + (endTime - startTime) + " nanoseconds");
-        writeNumbersToFile(arrayToList(bubbleArray), inputFileName, "Merge");
+        writeNumbersToFile(arrayToList(mergeArray), inputFileName, "merge");
+
+        // Testando QuickSort
+        int[] quickArray = listToArray(numbers);
+        startTime = System.nanoTime();
+        QuickSort quickSort = new QuickSort();
+        quickSort.sort(quickArray);
+        endTime = System.nanoTime();
+        System.out.println("QuickSort time: " + (endTime - startTime) + " nanoseconds");
+        writeNumbersToFile(arrayToList(quickArray), inputFileName, "quick");
+
+        // Testando BucketSort
+        int[] bucketArray = listToArray(numbers);
+        startTime = System.nanoTime();
+        BucketSort bucketSort = new BucketSort();
+        bucketSort.sort(bucketArray);
+        endTime = System.nanoTime();
+        System.out.println("BucketSort time: " + (endTime - startTime) + " nanoseconds");
+        writeNumbersToFile(arrayToList(bucketArray), inputFileName, "bucket");
     }
 
     // Lê os números de um arquivo de texto
