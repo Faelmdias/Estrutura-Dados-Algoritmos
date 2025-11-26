@@ -25,3 +25,16 @@ InsertionSort time: 94423492542 nanoseconds
 Números ordenados com insertion foram salvos em: numeros_tamanho1000000_insertion.txt
 SelectionSort time: 370368624180 nanoseconds
 Números ordenados com selection foram salvos em: numeros_tamanho1000000_selection.txt
+
+MergeSort time: 361205603 nanoseconds
+Números ordenados com merge foram salvos em: numeros_tamanho1000000_merge.txt
+QuickSort time: 107653911 nanoseconds
+Números ordenados com quick foram salvos em: numeros_tamanho1000000_quick.txt
+BucketSort time: 882212075 nanoseconds
+Números ordenados com bucket foram salvos em: numeros_tamanho1000000_bucket.txt
+InsertionSort time: 85462423724 nanoseconds
+Números ordenados com insertion foram salvos em: numeros_tamanho1000000_insertion.txt
+SelectionSort time: 338717869527 nanoseconds
+Números ordenados com selection foram salvos em: numeros_tamanho1000000_selection.txt
+BubbleSort time: 1454737025100 nanoseconds
+Números ordenados com bubble foram salvos em: numeros_tamanho1000000_bubble.txt
